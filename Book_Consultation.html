@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Consultation | QC Barber Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!-- ========== HEADER & NAV ========== -->
+  <header id="main-header">
+    <nav>
+      <div class="nav-header">
+        <h1 id="site-title">QC Barber Academy</h1>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="Book_Consultation.html">Book a Free Consultation</a></li>
+        <li class="dropdown">
+          <a href="All_Courses.html">All Courses</a>
+            <ul class="dropdown-menu">
+                <li><a href="1_private_workshop.html">Private Workshops</a></li>
+                <li><a href="2_day_group_salon.html">2 Day Group Salon Barber Training</a></li>
+                <li><a href="3_day_advanced.html">3 Day Advanced Barber Training</a></li>
+                <li><a href="3_week_intermediate.html">3 Week Intermediate Barber Training</a></li>
+                <li><a href="6_week_beginner.html">6 week Beginner Barber Training</a></li>
+                <li><a href="10_week_high_school.html">10 Week High School Program</a></li>
+            </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="consultation-hero">
+    <div class="hero-content">
+      <h2>Book Your Consultation Call</h2>
+      <p>Every journey starts with a conversation. Let's get to know each other and find the right class for you.</p>
+    </div>
+  </section>
+
+  <section id="consultation-form-section">
+
+    <!-- ★ Background video – sits behind the entire section ★ -->
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="QC_Media_Formated_Academy/alex_cleaning_trimmers.mp4" type="video/mp4">
+    </video>
+    <div class="form-container">
+      <h3>Tell Us About You</h3>
+      <form id="consultation-form" action="#" method="POST">
+        <label for="full-name">Full Name<span class="required">*</span></label>
+        <input type="text" id="full-name" name="full-name" required>
+
+        <label for="email">Email Address<span class="required">*</span></label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number<span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="meeting-type">Preferred Meeting Type<span class="required">*</span></label>
+        <select id="meeting-type" name="meeting-type" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="phone">Phone Call</option>
+          <option value="video">Video Call</option>
+        </select>
+
+        <p class="form-note">You’ll be able to pick a time with us after submitting this form.</p>
+
+        <button type="submit" id="submit-button">Continue to Scheduling</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="main-footer">
+    <div class="footer-contact">
+      <p><a href="mailto:QCbarberacademy@hotmail.com">QCbarberacademy@hotmail.com</a></p>
+      <p><a href="https://maps.google.com?q=4880+Rue+René-Émard,+Pierrefonds,+Quebec">
+        Quality Cuts, 4880 Rue René-Émard, Pierrefonds QC H9A 2Y1</a></p>
+      <p><a href="tel:5146844288">514-684-4288</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+  </script>
+
+
+</body>
+</html>

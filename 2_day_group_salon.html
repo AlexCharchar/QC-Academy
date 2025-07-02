@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QC Barber Academy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ========== HEADER & NAV ========== -->
+  <header id="main-header">
+    <nav>
+      <div class="nav-header">
+        <h1 id="site-title">QC Barber Academy</h1>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="Book_Consultation.html">Book a Free Consultation</a></li>
+        <li class="dropdown">
+          <a href="All_Courses.html">All Courses</a>
+            <ul class="dropdown-menu">
+                <li><a href="1_private_workshop.html">Private Workshops</a></li>
+                <li><a href="2_day_group_salon.html">2 Day Group Salon Barber Training</a></li>
+                <li><a href="3_day_advanced.html">3 Day Advanced Barber Training</a></li>
+                <li><a href="3_week_intermediate.html">3 Week Intermediate Barber Training</a></li>
+                <li><a href="6_week_beginner.html">6 week Beginner Barber Training</a></li>
+                <li><a href="10_week_high_school.html">10 Week High School Program</a></li>
+            </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== COURSE HERO ========== -->
+  <section id="course-hero" class="course-hero">
+
+    <!-- Left : main image + thumbs -->
+    <div class="course-hero-left">
+      <img
+        src="QC_Media_Formated_Academy/group_image_1.jpg"
+        alt="<!-- Describe main image -->"
+        id="course-main-image"
+      />
+
+      <div class="course-thumbnails">
+        <img src="QC_Media_Formated_Academy/group_image_1.jpg" alt="Thumb 1" class="course-thumb is-active" />
+        <img src="QC_Media_Formated_Academy/group_image_2.jpg" alt="Thumb 2" class="course-thumb" />
+        <img src="QC_Media_Formated_Academy/group_photo_3.jpg" alt="Thumb 3" class="course-thumb" />
+      </div>
+    </div>
+
+    <!-- Right : details -->
+    <div class="course-hero-right">
+      <h2 id="course-title">Group Salon Barber Training</h2>
+      <p class="course-duration">Duration: 2 Days</p>
+      <p class="course-price">C$20.00</p>
+
+      <a href="Book_Consultation.html" class="button">Enroll Now</a>
+
+      <p class="course-short-desc">An intensive in-salon training designed to sharpen your team’s skills, eliminate bad habits, and bring your entire shop to the next level.</p>
+    </div>
+  </section>
+
+  <!-- ========== FULL DESCRIPTION ========== -->
+  <section id="course-description" class="course-description">
+    <h3>Course Overview</h3>
+    <p>Introducing our dynamic 2-Day Salon Training Course, where excellence comes to you. Designed to elevate your team's barbering skills, this intensive program offers personalized instruction right in the comfort of your salon.</p>
+    <p>As a shop owner, you understand the importance of ensuring your team is equipped with the latest techniques and trends. Our team of educators is here to finesse their skills, reinforce fundamentals, and eliminate any lingering bad habits.</p>
+    <p>Over the course of two immersive days, your barbers and stylists will undergo comprehensive training aimed at enhancing their expertise and efficiency in executing trending hair styles. From mastering precision cuts to creative styling, our course is tailored to meet the diverse needs of your team.</p>
+    <p>Whether you have a small group or a larger team, our program can accommodate various group sizes. Additional fees per student may apply for larger groups, ensuring each participant receives personalized attention and guidance.</p>
+    <p>Don't miss this opportunity to invest in the growth and success of your salon team. Let us bring our expertise to you, and together, we'll elevate your salon to new heights of excellence.</p>
+    <br>
+    <h3>What You’ll Learn</h3>
+    <ul>
+      <li>Precision cutting techniques for both classic and trending styles</li>
+      <li>Team-wide consistency and foundational reinforcement</li>
+      <li>Time-saving systems to boost service speed and client flow</li>
+      <li>Personalized feedback to correct form and improve technique</li>
+      <li>Creative styling methods to expand your service offerings</li>
+    </ul>
+    <br>
+    <h3>Included in the Course</h3>
+    <p>On-site personalized instruction, mannequin heads, certificates of completion, feedback forms for each participant, and optional Q&A sessions with our educators.</p>
+    <br>
+    <h3>Ideal For</h3>
+    <p>Salon and barbershop owners who want to upskill their entire team, improve shop consistency, and bring modern techniques directly into their workspace.</p>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="main-footer">
+    <div class="footer-contact">
+      <p><a href="mailto:QCbarberacademy@hotmail.com">QCbarberacademy@hotmail.com</a></p>
+      <p><a href="https://maps.google.com?q=4880+Rue+René-Émard,+Pierrefonds,+Quebec">
+        Quality Cuts, 4880 Rue René-Émard, Pierrefonds QC H9A 2Y1</a></p>
+      <p><a href="tel:5146844288">514-684-4288</a></p>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    /* hamburger toggle */
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+    /* image gallery swap */
+    const mainImg = document.getElementById('course-main-image');
+    document.querySelectorAll('.course-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        /* update main image */
+        mainImg.src = thumb.src;
+        mainImg.alt = thumb.alt;
+
+        /* highlight active thumb */
+        document.querySelectorAll('.course-thumb').forEach(t => t.classList.remove('is-active'));
+        thumb.classList.add('is-active');
+      });
+    });
+  </script>
+
+</body>
+</html>

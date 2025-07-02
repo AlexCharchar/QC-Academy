@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Courses - QC Barber Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!-- ========== HEADER & NAV ========== -->
+  <header id="main-header">
+    <nav>
+      <div class="nav-header">
+        <h1 id="site-title">QC Barber Academy</h1>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="Book_Consultation.html">Book a Free Consultation</a></li>
+        <li class="dropdown">
+          <a href="All_Courses.html">All Courses</a>
+            <ul class="dropdown-menu">
+                <li><a href="1_private_workshop.html">Private Workshops</a></li>
+                <li><a href="2_day_group_salon.html">2 Day Group Salon Barber Training</a></li>
+                <li><a href="3_day_advanced.html">3 Day Advanced Barber Training</a></li>
+                <li><a href="3_week_intermediate.html">3 Week Intermediate Barber Training</a></li>
+                <li><a href="6_week_beginner.html">6 week Beginner Barber Training</a></li>
+                <li><a href="10_week_high_school.html">10 Week High School Program</a></li>
+            </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>    
+
+  <main id="courses-section">
+
+    <!-- ★ Background video – plays behind everything in this section ★ -->
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="QC_Media_Formated_Academy/marcus_burst_linup_looped.mp4" type="video/mp4">
+    </video>
+
+    <section class="courses-overview">
+      <h2 class="section-title">Explore Our Courses</h2>
+      <p class="section-subtitle">Choose the course that's right for you</p>
+      
+      <div class="courses-grid">
+        <a href="1_private_workshop.html" class="course-card" id="course1">
+          <h3 class="course-title">Private Workshops</h3>
+          <p class="course-desc">Tailored 1-on-1 coaching to sharpen your skills and correct bad habits — fast</p>
+        </a>
+
+        <a href="2_day_group_salon.html" class="course-card" id="course2">
+          <h3 class="course-title">2 Day Group Salon Barber Training</h3>
+          <p class="course-desc">Elevate your entire team's performance with hands-on in-shop instruction</p>
+        </a>
+
+        <a href="3_day_advanced.html" class="course-card" id="course3">
+          <h3 class="course-title">3 Day Advanced Barber Training</h3>
+          <p class="course-desc">Push past your plateau with expert feedback and high-level cutting techniques</p>
+        </a>
+
+        <a href="3_week_intermediate.html" class="course-card" id="course4">
+          <h3 class="course-title">3 Week Intermediate Barber Training</h3>
+          <p class="course-desc">Break bad habits and level up your fade, scissor, and design game</p>
+        </a>
+
+        <a href="6_week_beginner.html" class="course-card" id="course5">
+          <h3 class="course-title">6 week Beginner Barber Training</h3>
+          <p class="course-desc">From zero to shop-ready — build real skills with real clients</p>
+        </a>
+
+        <a href="10_week_high_school.html" class="course-card" id="course6">
+          <h3 class="course-title">10 Week High School Program</h3>
+          <p class="course-desc">Give your future a fresh fade — career - ready training for young creatives</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="main-footer">
+    <div class="footer-contact">
+      <p><a href="mailto:QCbarberacademy@hotmail.com">QCbarberacademy@hotmail.com</a></p>
+      <p><a href="https://maps.google.com?q=4880+Rue+René-Émard,+Pierrefonds,+Quebec">
+        Quality Cuts, 4880 Rue René-Émard, Pierrefonds QC H9A 2Y1</a></p>
+      <p><a href="tel:5146844288">514-684-4288</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+  </script>
+
+
+</body>
+</html>

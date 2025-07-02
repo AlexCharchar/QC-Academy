@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QC Barber Academy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ========== HEADER & NAV ========== -->
+  <header id="main-header">
+    <nav>
+      <div class="nav-header">
+        <h1 id="site-title">QC Barber Academy</h1>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="Book_Consultation.html">Book a Free Consultation</a></li>
+        <li class="dropdown">
+          <a href="All_Courses.html">All Courses</a>
+            <ul class="dropdown-menu">
+                <li><a href="1_private_workshop.html">Private Workshops</a></li>
+                <li><a href="2_day_group_salon.html">2 Day Group Salon Barber Training</a></li>
+                <li><a href="3_day_advanced.html">3 Day Advanced Barber Training</a></li>
+                <li><a href="3_week_intermediate.html">3 Week Intermediate Barber Training</a></li>
+                <li><a href="6_week_beginner.html">6 week Beginner Barber Training</a></li>
+                <li><a href="10_week_high_school.html">10 Week High School Program</a></li>
+            </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== COURSE HERO ========== -->
+  <section id="course-hero" class="course-hero">
+
+    <!-- Left : main image + thumbs -->
+    <div class="course-hero-left">
+      <img
+        src="QC_Media_Formated_Academy/group_image_1.jpg"
+        alt="<!-- Describe main image -->"
+        id="course-main-image"
+      />
+
+      <div class="course-thumbnails">
+        <img src="QC_Media_Formated_Academy/group_image_1.jpg" alt="Thumb 1" class="course-thumb is-active" />
+        <img src="QC_Media_Formated_Academy/group_image_2.jpg" alt="Thumb 2" class="course-thumb" />
+        <img src="QC_Media_Formated_Academy/group_photo_3.jpg" alt="Thumb 3" class="course-thumb" />
+      </div>
+    </div>
+
+    <!-- Right : details -->
+    <div class="course-hero-right">
+      <h2 id="course-title">Intermediate Barber Training</h2>
+      <p class="course-duration">Duration: 3 weeks</p>
+      <p class="course-price">C$20.00</p>
+
+      <a href="Book_Consultation.html" class="button">Enroll Now</a>
+
+      <p class="course-short-desc">A focused, skill-building program designed to help intermediate barbers refine technique, eliminate bad habits, and build speed and precision.</p>
+    </div>
+  </section>
+
+  <!-- ========== FULL DESCRIPTION ========== -->
+  <section id="course-description" class="course-description">
+    <h3>Course Overview</h3>
+    <p>Elevate your skills to the next level with our Intermediate 3-Week Barber Training Course. This intensive program is designed for barbers and stylists with prior knowledge and experience in barbering, who are eager to expand their expertise.</p>
+    <p>Over the course of three weeks, participants will engage in three days of instructional training per week, with each session spanning four hours. Our expert instructors will guide you through refining your fundamental techniques, ensuring you're equipped with the skills needed to excel in the craft of barbering.</p>
+    <p>Whether you're looking to undo bad habits, learn the proper execution of cuts, or simply refine your existing skills, this course is tailored to meet your needs. With a focus on efficiency and precision, our experienced team will empower you to achieve superior results in less time.</p>
+    <p>Don't miss this opportunity to learn from our passionate and knowledgeable team as you take your barbering skills to new heights. Let us help you unlock your full potential and become a master in your craft.</p>
+    <br>
+    <h3>What You’ll Learn</h3>
+    <ul>
+      <li>Proper execution of core haircutting techniques</li>
+      <li>Correction of common mistakes and bad habits</li>
+      <li>Time-efficient cutting systems to improve workflow</li>
+      <li>Precision fading, tapering, and line-up fundamentals</li>
+      <li>Confidence and consistency behind the chair</li>
+    </ul>
+    <br>
+    <h3>Included in the Course</h3>
+    <p>Nine 4-hour hands-on sessions over three weeks, guided by expert instructors, with personalized feedback, certificate of completion, and mannequin training support.</p>
+    <br>
+    <h3>Ideal For</h3>
+    <p>Barbers and stylists with foundational skills who are ready to level up their craft, reinforce proper technique, and gain the confidence to deliver professional results with speed and accuracy.</p>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="main-footer">
+    <div class="footer-contact">
+      <p><a href="mailto:QCbarberacademy@hotmail.com">QCbarberacademy@hotmail.com</a></p>
+      <p><a href="https://maps.google.com?q=4880+Rue+René-Émard,+Pierrefonds,+Quebec">
+        Quality Cuts, 4880 Rue René-Émard, Pierrefonds QC H9A 2Y1</a></p>
+      <p><a href="tel:5146844288">514-684-4288</a></p>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    /* hamburger toggle */
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+    /* image gallery swap */
+    const mainImg = document.getElementById('course-main-image');
+    document.querySelectorAll('.course-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        /* update main image */
+        mainImg.src = thumb.src;
+        mainImg.alt = thumb.alt;
+
+        /* highlight active thumb */
+        document.querySelectorAll('.course-thumb').forEach(t => t.classList.remove('is-active'));
+        thumb.classList.add('is-active');
+      });
+    });
+  </script>
+
+</body>
+</html>

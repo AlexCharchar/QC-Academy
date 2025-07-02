@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QC Barber Academy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ========== HEADER & NAV ========== -->
+  <header id="main-header">
+    <nav>
+      <div class="nav-header">
+        <h1 id="site-title">QC Barber Academy</h1>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="Book_Consultation.html">Book a Free Consultation</a></li>
+        <li class="dropdown">
+          <a href="All_Courses.html">All Courses</a>
+            <ul class="dropdown-menu">
+                <li><a href="1_private_workshop.html">Private Workshops</a></li>
+                <li><a href="2_day_group_salon.html">2 Day Group Salon Barber Training</a></li>
+                <li><a href="3_day_advanced.html">3 Day Advanced Barber Training</a></li>
+                <li><a href="3_week_intermediate.html">3 Week Intermediate Barber Training</a></li>
+                <li><a href="6_week_beginner.html">6 week Beginner Barber Training</a></li>
+                <li><a href="10_week_high_school.html">10 Week High School Program</a></li>
+            </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== COURSE HERO ========== -->
+  <section id="course-hero" class="course-hero">
+
+    <!-- Left : main image + thumbs -->
+    <div class="course-hero-left">
+      <img
+        src="QC_Media_Formated_Academy/group_image_1.jpg"
+        alt="<!-- Describe main image -->"
+        id="course-main-image"
+      />
+
+      <div class="course-thumbnails">
+        <img src="QC_Media_Formated_Academy/group_image_1.jpg" alt="Thumb 1" class="course-thumb is-active" />
+        <img src="QC_Media_Formated_Academy/group_image_2.jpg" alt="Thumb 2" class="course-thumb" />
+        <img src="QC_Media_Formated_Academy/group_photo_3.jpg" alt="Thumb 3" class="course-thumb" />
+      </div>
+    </div>
+
+    <!-- Right : details -->
+    <div class="course-hero-right">
+      <h2 id="course-title">Advanced Barber Training</h2>
+      <p class="course-duration">Duration: 3 Days</p>
+      <p class="course-price">C$20.00</p>
+
+      <a href="Book_Consultation.html" class="button">Enroll Now</a>
+
+      <p class="course-short-desc">A high-level, hands-on training designed for experienced barbers ready to master advanced techniques and redefine their craft.</p>
+    </div>
+  </section>
+
+  <!-- ========== FULL DESCRIPTION ========== -->
+  <section id="course-description" class="course-description">
+    <h3>Course Overview</h3>
+    <p>Welcome to our exclusive 3-Day Advanced Barber Training program, where mastery meets innovation. Over the course of three intensive days, participants will engage in a comprehensive blend of instructional theory and hands-on training, with each session spanning four hours.</p>
+    <p>Tailored for experienced barbers and stylists seeking to refine their craft, this course is designed to elevate skills to unprecedented levels of excellence. Whether you're looking to enhance scissor work, master clipper techniques, or perfect your blade skills, our program is your gateway to unlocking your full potential.</p>
+    <p>Led by our team of seasoned professionals, this course delves deep into advanced techniques, ensuring participants gain a thorough understanding of the latest trends and innovations in the industry. From precision cutting to creative styling, we'll equip you with the tools and knowledge needed to impress even the most discerning clients.</p>
+    <p>Students are required to bring in their own clients for hands-on training. During sessions, instructors will observe your cutting techniques, providing guidance and corrections where necessary, as well as offering insights on time-saving techniques.</p>
+    <p>Don't miss this opportunity to stay ahead of the curve and take your skills to the next level. Join us as we redefine the standard of excellence in the world of barbering.</p>
+    <br>
+    <h3>What You’ll Learn</h3>
+    <ul>
+      <li>Advanced scissor and clipper techniques for flawless execution</li>
+      <li>Straight razor work and blade detailing for elite precision</li>
+      <li>Time-saving systems to increase speed without sacrificing quality</li>
+      <li>Trend-driven creative styling and haircut design</li>
+      <li>Live feedback and corrections on real clients to refine technique and boost confidence</li>
+    </ul>
+    <br>
+    <h3>Included in the Course</h3>
+    <p>Three 4-hour hands-on sessions with expert instructors, theory-based modules, certificate of completion, and in-depth feedback for continuous improvement.</p>
+    <br>
+    <h3>Ideal For</h3>
+    <p>Experienced barbers and stylists ready to elevate their skills, attract higher-end clientele, and become leaders in modern barbering excellence.</p>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="main-footer">
+    <div class="footer-contact">
+      <p><a href="mailto:QCbarberacademy@hotmail.com">QCbarberacademy@hotmail.com</a></p>
+      <p><a href="https://maps.google.com?q=4880+Rue+René-Émard,+Pierrefonds,+Quebec">
+        Quality Cuts, 4880 Rue René-Émard, Pierrefonds QC H9A 2Y1</a></p>
+      <p><a href="tel:5146844288">514-684-4288</a></p>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    /* hamburger toggle */
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+    /* image gallery swap */
+    const mainImg = document.getElementById('course-main-image');
+    document.querySelectorAll('.course-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        /* update main image */
+        mainImg.src = thumb.src;
+        mainImg.alt = thumb.alt;
+
+        /* highlight active thumb */
+        document.querySelectorAll('.course-thumb').forEach(t => t.classList.remove('is-active'));
+        thumb.classList.add('is-active');
+      });
+    });
+  </script>
+
+</body>
+</html>
