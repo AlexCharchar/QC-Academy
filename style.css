@@ -139,7 +139,7 @@ ul.nav-menu,
 
   /* Background: logo first, color fallback second */
   background:
-    url("QC_Media_Formated_Academy/QCAcademy-logo-white_no_words.png") center / cover no-repeat, black;
+    url("QC_Media_Formated_Academy/QCAcademy-logo-white_no_words.png") center / contain no-repeat, black;
     color: var(--light-text);
     min-height: 320px;
     max-height: 500px; 
@@ -508,6 +508,8 @@ form select {
   .course-card:hover {
     box-shadow: 0 6px 16px rgba(0,0,0,0.12);
   }
+
+
 }
 
 /* =========================================================
