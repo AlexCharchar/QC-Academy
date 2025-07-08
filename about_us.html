@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QC Barber Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="main-header">
+    
+    <nav>
+        <div class="nav-header">
+            <h1 id="site-title">QC Barber Academy</h1>
+            <button class="hamburger" id="hamburger">&#9776;</button>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="Book_Consultation.html">Book your consultation call</a></li>
+            <li class="dropdown">
+            <a href="All_Courses.html">Courses</a>
+            <ul class="dropdown-menu">
+                <li><a href="1_private_workshop.html">Private Workshops</a></li>
+                <li><a href="2_day_group_salon.html">2 Day Group Salon Barber Training</a></li>
+                <li><a href="3_day_advanced.html">3 Day Advanced Barber Training</a></li>
+                <li><a href="3_week_intermediate.html">3 Week Intermediate Barber Training</a></li>
+                <li><a href="6_week_beginner.html">6 week Beginner Barber Training</a></li>
+                <li><a href="10_week_high_school.html">10 Week High School Program</a></li>
+            </ul>
+            </li>
+        </ul>
+    </nav>
+    
+  </header>
+
+  <!-- ===============================================
+     PAGE HERO (shows the big teal “QC” background)
+     — place this *immediately* after </header>
+==================================================-->
+<section id="hero-section">
+  <div class="hero-content">
+    <h2>The Story Behind QC Barber Academy.</h2>
+    <a href="Testimonials.html" class="button">Read Our Reviews</a>
+  </div>
+</section>
+
+
+<!-- ===========================
+     ABOUT US SECTION
+     (replace your existing <section id="about-section">…</section> with everything below)
+=========================== -->
+<section id="about-section">
+  <div class="about-images"></div>
+
+  <div class="about-text">
+    <h2>About Us</h2>
+
+    <!-- === Intro Paragraph === -->
+    <p>
+      QC Barber Academy is a leading barbering school in Montreal, dedicated to helping students master the art and business of barbering. Based in Pierrefonds in the West Island, our programs offer in-depth training that goes far beyond the basics.
+    </p>
+
+    <!-- === Image 1 — Framed Graduate === -->
+    <img id="about-img-1"
+         src="QC_Media_Formated_Academy/3_framed.jpg"
+         alt="Graduate holding framed photo">
+    <br>
+
+    <!-- === Technical & Business Training Description === -->
+    <p>
+      Led by industry professionals, our courses blend technical skills—like clipper work, fading, and scissor techniques—with real-world knowledge in client care, marketing, and self-branding. You’ll learn not only how to cut hair with precision, but how to build a successful barbering career from the ground up.
+    </p>
+    <br>
+
+    <!-- === Course Levels Description === -->
+    <p>
+      Our training includes beginner, intermediate, and advanced barber courses, all taught in an authentic barbershop setting. Whether you're a high-school student looking to get started or a working barber wanting to refine your skills, we have a program for you.
+    </p>
+
+    <!-- === Image 2 — Graduate With Diploma === -->
+    <img id="about-img-2"
+         src="QC_Media_Formated_Academy/2_completed_will.jpg"
+         alt="Graduate receiving diploma">
+    <br>
+
+    <!-- === Student Experience & Outcomes === -->
+    <p>
+      Students train with real clients, receive ongoing feedback from skilled educators, and graduate with the confidence and ability to thrive in the industry.
+    </p>
+    <br>
+
+    <!-- === Call-to-Action Text === -->
+    <p>
+      If you’re searching for a top-rated barber school in Montreal, or want to join a barber academy in the West Island with a proven track record — QC Barber Academy is your destination.
+    </p>
+    <br>
+
+    <!-- === Centered CTA Button === -->
+    <div class="about-cta"></div>
+      <a href="Book_Consultation.html" class="button">Let's get in touch</a>
+    </div>
+  </div>
+</section>
+
+ <!-- ========== FOOTER ========== -->
+  <footer id="main-footer">
+    <div class="footer-contact">
+      <p><a href="mailto:QCbarberacademy@hotmail.com">QCBarberAcademy@hotmail.com</a></p>
+      <p><a href="https://maps.google.com?q=4880+Rue+René-Émard,+Pierrefonds,+Quebec">
+        Quality Cuts Salon, 4880 Rue René-Émard, Pierrefonds QC&nbsp;H9A 2Y1</a></p>
+      <p><a href="tel:5146844288">514-684-4288</a></p>
+    </div>
+  </footer>
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

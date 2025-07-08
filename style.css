@@ -1,6 +1,6 @@
-/* ========================================================= */
-/* 1. CSS Variables & Reset                                  */
-/* ========================================================= */
+/* =========================================================
+   1. CSS Variables & Reset
+   ========================================================= */
 :root {
   --main-color:   #0093B2;   /* teal */
   --accent-color: #007a94;   /* darker teal */
@@ -24,9 +24,9 @@ body {
   font-size: 1rem;
 }
 
-/* ========================================================= */
-/* 2. Global Sections                                        */
-/* ========================================================= */
+/* =========================================================
+   2. Global Sections
+   ========================================================= */
 
 /* ---------- Header wrapper (teal bar behind nav) ---------- */
 #main-header {
@@ -35,13 +35,13 @@ body {
   padding: 0;                      /* let nav control its own padding */
 }
 
-/* ---------- NAVIGATION (black bar) ---------- */
+/* ---------- NAVIGATION (teal bar) ---------- */
 nav {
   width: 100%;
-  background-color: var(--main-color);          /* solid black bar */
+  background-color: var(--main-color);
 }
 
-/* top row: title  +  hamburger (only on mobile) */
+/* top row: title + hamburger (mobile only) */
 .nav-header {
   display: flex;
   justify-content: center;
@@ -51,13 +51,13 @@ nav {
 }
 
 #site-title {
-  flex-grow: 1;                    /* let it take available space */
+  flex-grow: 1;
   text-align: center;
   font-size: 2rem;
   color: #fff;
 }
 
-/* hamburger (hidden desktop, shown mobile) */
+/* hamburger — hidden desktop, shown mobile */
 .hamburger {
   position: absolute;
   right: 1rem;
@@ -68,12 +68,13 @@ nav {
   border: none;
   color: #fff;
   cursor: pointer;
-  display: none;                   /* shown via media query */
+  display: none;                   /* toggled via media query */
 }
 
 /* main nav list */
-ul.nav-menu, .nav-menu ul {
-  list-style: none;                /* remove dots */
+ul.nav-menu,
+.nav-menu ul {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -125,7 +126,6 @@ ul.nav-menu, .nav-menu ul {
 .dropdown-menu li a:hover { background: #222; }
 
 /* ---------- HERO SECTION ---------- */
-/* ---------- HERO SECTION (background image version) ---------- */
 #hero-section,
 #consultation-hero {
   /* Layout */
@@ -137,35 +137,35 @@ ul.nav-menu, .nav-menu ul {
   gap: 2rem;
   padding: 3rem 5%;
 
-  /* Background: logo first, brand-colour fallback second */
+  /* Background: logo first, color fallback second */
   background:
-    url("QC_Media_Formated_Academy/logo.jpg") center / cover no-repeat,
-    var(--main-color);          /* teal backup if image missing */
-  color: var(--light-text);     /* keep text white for contrast */
+    url("QC_Media_Formated_Academy/QC_Academy_simplified_logo.jpg") center / cover no-repeat,
+    var(--main-color);
+  color: var(--light-text);
 
-  min-height: 320px;            /* ensures hero has some height on tiny screens */
+  min-height: 320px;
 }
 
-/* Optional dark overlay to guarantee text readability */
+/* dark overlay to guarantee text readability */
 #hero-section::before,
 #consultation-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.7); /* 40 % black tint — tweak if needed */
+  background: rgba(0,0,0,0.1);
 }
 
-/* Make the actual content sit above the overlay */
+/* make hero content sit above overlay */
 #hero-section > *,
 #consultation-hero > * {
   position: relative;
   z-index: 1;
 }
 
-/* ---------- Inner hero content ---------- */
+/* inner hero content */
 .hero-left,
-.hero-content {                 /* covers both hero variants */
-  flex: 1 1 280px;              /* grow/shrink but never <280 px */
+.hero-content {
+  flex: 1 1 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -183,7 +183,7 @@ ul.nav-menu, .nav-menu ul {
   border-radius: 4px;
 }
 
-/* Image in hero (if present) */
+/* hero image (if present) */
 #hero-image {
   flex: 0 1 300px;
   max-width: 25%;
@@ -232,14 +232,21 @@ section { padding: 3rem 5%; }
   min-width: 250px;
 }
 
+/* -------------------------------------------------
+   ABOUT-US  CTA Button
+   • block-level for centering
+   • auto margins = centered container
+   • clear:both keeps it below floated images
+   ------------------------------------------------- */
 .about-text a.button {
   display: block;
   width: fit-content;
-  margin: 1.5rem auto 0 auto; /* top: 1.5rem, left/right: auto, bottom: 0 */
+  margin: 1.5rem auto 0 auto;      /* top right/left bottom */
+  clear: both;                     /* <— NEW  (fixes layout issue) */
 }
-/* ---------- Two-image side-by-side layout ---------- */
 
-/* Image 1: floats right of text */
+/* ---------- Two-image float layout ---------- */
+/* Image 1 floats right */
 #about-img-1 {
   float: right;
   max-width: 300px;
@@ -248,7 +255,7 @@ section { padding: 3rem 5%; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Image 2: floats left of text */
+/* Image 2 floats left */
 #about-img-2 {
   float: left;
   max-width: 300px;
@@ -257,24 +264,17 @@ section { padding: 3rem 5%; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Clear floats after paragraphs to prevent layout bugs */
-.about-text p {
-  overflow: hidden;
-}
-
+/* clear floats after each paragraph to avoid overlap */
+.about-text p { overflow: hidden; }
 
 /* ---------- Testimonials ---------- */
-#testimonials-section {
-  background: #e7f7fb;
-}
+#testimonials-section { background: #f9f9f9; }
 
-#testimonials-section h2 {
-  text-align: center;
-}
+#testimonials-section h2 { text-align: center; }
 
-.testimonial { margin-bottom: 2rem;text-align: center; }
+.testimonial { margin-bottom: 2rem; text-align: center; }
 
-.testimonial-text { font-style: italic;}
+.testimonial-text { font-style: italic; }
 
 .testimonial-author {
   font-weight: bold;
@@ -289,13 +289,12 @@ section { padding: 3rem 5%; }
   margin-top: 1rem;
 }
 
-
 /* ---------- Courses Grid ---------- */
 #courses-section {
-  min-height: calc(100vh - 280px);   /* tweak 280 if header/footer get taller */
+  min-height: calc(100vh - 280px);   /* tweak 280 if header/footer change */
   display: flex;
-  flex-direction: column;            /* lets grid stay auto-height */
- }
+  flex-direction: column;
+}
 
 .section-title { font-size: 2rem; margin-bottom: 0.5rem; }
 
@@ -320,8 +319,7 @@ section { padding: 3rem 5%; }
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* ---------- Form ---------- */
-
+/* ---------- Forms ---------- */
 .form-container { max-width: 600px; margin: 0 auto; }
 
 form label {
@@ -339,7 +337,7 @@ form select {
   border-radius: 4px;
 }
 
-.required { color: red; }
+.required  { color: red; }
 .form-note { font-size: 0.9rem; color: #555; margin-bottom: 1rem; }
 
 /* ---------- Footer ---------- */
@@ -359,117 +357,100 @@ form select {
 
 .footer-contact a:hover { text-decoration: underline; }
 
-
 /* ---------- Background video inside #courses-section ---------- */
-#courses-section {
-  position: relative;          /* establishes containing block for the video */
-  overflow: hidden;            /* hides any overflow from the video edges */
-}
+#courses-section { position: relative; overflow: hidden; }
 
 #courses-section .bg-video {
   position: absolute;
-  inset: 0;                    /* shorthand: top/right/bottom/left = 0 */
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;           /* fills the area while preserving aspect ratio */
-  z-index: -1;                 /* pushes it behind the section content */
-  opacity: 0.70;               /* dial this up/down to lighten or darken */
-  /* Optional filter to darken more for contrast:
-     filter: brightness(0.6);
-  */
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5;
 }
 
-/* ---------- Consultation form — VIDEO background ---------- */
-#consultation-form-section{
-  position: relative;            /* establishes stacking context   */
-  overflow: hidden;              /* trims video overhang           */
-}
+/* ---------- Consultation form — video background ---------- */
+#consultation-form-section { position: relative; overflow: hidden; }
 
-/* the <video class="bg-video"> you added in HTML */
-#consultation-form-section .bg-video{
+#consultation-form-section .bg-video {
   position: absolute;
-  inset: 0;                      /* top/right/bottom/left = 0      */
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;             /* fill section, crop gracefully  */
-  z-index: -1;                   /* sit behind the form            */
-  opacity: .70;                  /* dial up/down for readability   */
-  /* filter: brightness(.6);    ← uncomment to darken even more   */
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.70;
 }
 
-/* keep form easy to read */
-.form-container{
-  background: rgba(255,255,255,.85); /* translucent white panel    */
+.form-container {
+  background: rgba(255,255,255,.85);
   padding: 2rem;
   border-radius: 8px;
 }
 
-
-/* ========================================================= */
-/* 3. Responsive (≤ 768 px)                                   */
-/* ========================================================= */
+/* =========================================================
+   3. Responsive  (≤ 768 px)
+   ========================================================= */
 @media (max-width: 768px) {
-  /* Show hamburger, hide menu until toggled */
-  .hamburger           { display: block; }
-  .nav-menu            { display: none;   flex-direction: column; width: 100%; }
-  .nav-menu.active     { display: flex;  }
+  /* hamburger shows, menu collapses */
+  .hamburger        { display: block; }
+  .nav-menu         { display: none; flex-direction: column; width: 100%; }
+  .nav-menu.active  { display: flex; }
 
-  .nav-menu li         { padding: 1rem 0; text-align: center; }
+  .nav-menu li      { padding: 1rem 0; text-align: center; }
 
-  /* Mobile dropdown behaves like accordion */
-  .dropdown-menu       { position: static; border: none; box-shadow: none; background: #111; }
+  /* mobile dropdown behaves like accordion */
+  .dropdown-menu    { position: static; border: none; box-shadow: none; background: #111; }
 
-/* Responsive fix — stack images on mobile */
-   #about-img-1, #about-img-2 {
+  /* images no longer float — stack & center */
+  #about-img-1,
+  #about-img-2 {
     float: none;
     display: block;
-    margin: 1.5rem auto;}
+    margin: 1.5rem auto;
+  }
 
-  /* Stack hero & sections */
+  /* stack hero & sections */
   #hero-section,
-  #consultation-hero   { flex-direction: column; text-align: center; }
+  #consultation-hero { flex-direction: column; text-align: center; }
 
   #intro-section,
-  #about-section       { flex-direction: column; }
+  #about-section     { flex-direction: column; }
 
   .hero-left h2,
-  .hero-content h2     { font-size: 1.5rem; }
+  .hero-content h2   { font-size: 1.5rem; }
 
-  /* Smaller title */
-  #site-title          { font-size: 1.5rem; }
+  /* smaller site title */
+  #site-title        { font-size: 1.5rem; }
 }
 
-/* =============================================================
-   DESKTOP ENHANCEMENT  –  3-column grid + roomier cards
-   ============================================================= */
+/* =========================================================
+   4. Desktop enhancement (≥ 1200 px)
+   ========================================================= */
 @media (min-width: 1200px) {
-
-  /* A — cap the grid at exactly three columns */
   .courses-grid {
-    grid-template-columns: repeat(3, 1fr);   /* 3 equal-width tracks */
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  /* C — make each card feel premium */
   .course-card {
-    padding: 1.5rem;              /* was 1rem */
-    font-size: 1.05rem;           /* subtle bump for body text */
+    padding: 1.5rem;
+    font-size: 1.05rem;
   }
 
-  .course-title {                 /* headline inside each card */
-    font-size: 1.4rem;            /* was 1.3rem */
+  .course-title {
+    font-size: 1.4rem;
     margin-bottom: 0.6rem;
   }
 
-  /* optional: a softer shadow for a “lifted” look */
   .course-card:hover {
     box-shadow: 0 6px 16px rgba(0,0,0,0.12);
   }
 }
 
-/* ───────────────────────────────────────────────
-   COURSE PAGE LAYOUT
-   (Course_1.html and any future course pages)
-   ─────────────────────────────────────────────── */
+/* =========================================================
+   5. Course page layout (Course_1.html etc.)
+   ========================================================= */
 .course-hero {
   padding: 3rem 5%;
   display: flex;
@@ -483,7 +464,7 @@ form select {
   min-width: 260px;
 }
 
-/* Main preview image */
+/* main preview image */
 #course-main-image {
   width: 100%;
   max-width: 480px;
@@ -491,7 +472,7 @@ form select {
   border-radius: 8px;
 }
 
-/* Thumbnail strip */
+/* thumbnail strip */
 .course-thumbnails {
   margin-top: 0.75rem;
   display: flex;
@@ -499,10 +480,9 @@ form select {
 }
 
 .course-thumb {
-  /* uniform, non-distorted squares */
   width: 80px;
-  height: 80px;          /* force a square */
-  object-fit: cover;     /* crop to fill, never stretch */
+  height: 80px;           /* square thumbnails */
+  object-fit: cover;
   object-position: center;
   border: 2px solid var(--main-color);
   border-radius: 4px;
@@ -513,20 +493,13 @@ form select {
 .course-thumb:hover,
 .course-thumb.is-active {
   opacity: 0.8;
-  border-color: var(--hover, var(--main-color));
 }
 
-/* Right-hand details */
-.course-duration {
-  margin: 0.5rem 0 0.25rem;
-}
+/* right-hand details */
+.course-duration { margin: 0.5rem 0 0.25rem; }
+.course-price    { font-weight: bold; margin-bottom: 1rem; }
 
-.course-price {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-/* Enroll button (inherits your main colour variable) */
+/* enroll button */
 #enroll-button {
   background: var(--main-color);
   color: #fff;
@@ -536,57 +509,68 @@ form select {
   cursor: pointer;
 }
 
-/* Full description section */
-.course-description {
-  padding: 3rem 5%;
-}
-/* ───────── HEADER ACCENT BORDER ───────── */
+/* full description section */
+.course-description { padding: 3rem 5%; }
 
-
-/* ── Frame appears on hover or when current page is active ── */
-.nav-menu a {
-  padding: 0.25rem 0.75rem;
-  border: 2px solid transparent;   /* invisible by default */
-  border-radius: 4px;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-/* Show border on hover / focus */
-.nav-menu a:hover,
-.nav-menu a:focus {
-  border-color: var(--main-color);
-}
-
-/* Keep border on the page you’re currently on
-   (add class="active" to that <a> in your HTML) */
-.nav-menu a.active {
-  border-color: var(--main-color);
-  background: rgba(0, 147, 178, 0.12); /* faint tint — optional */
-}
-
+/* =========================================================
+   6. Small utilities
+   ========================================================= */
 .button {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #0093B2/* teal */;
+  background-color: var(--main-color);
   color: white;
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
 }
 
-
-#site-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-
-  /* Thin black border effect 
-  text-shadow:
-    -2px -2px 0 black,
-     2px -2px 0 black,
-    -2px  2px 0 black,
-     2px  2px 0 black; */
+/* Nav link accent border */
+.nav-menu a {
+  padding: 0.25rem 0.75rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
+.nav-menu a:hover,
+.nav-menu a:focus {
+  border-color: var(--main-color);
+}
 
+.nav-menu a.active {
+  border-color: var(--main-color);
+  background: rgba(0, 147, 178, 0.12);
+}
+
+/* centred CTA wrappers */
+.cta-center,
+.hero-content { text-align: center; }
+
+.cta-center { margin: 2rem 0; }
+
+/* === thin black outline on every “button” === */
+.button{
+  border: 1px solid #000;     /* thin black line */
+  border-radius: 4px;         /* subtle rounded corners */
+}
+
+/* keep the outline on hover / focus states */
+.button:hover,
+.button:focus{
+  border-color: #000;
+}
+
+html{ height:100%; }          /* baseline                           */
+
+body{
+  min-height:100%;            /* may grow taller than the viewport  */
+  display:flex;
+  flex-direction:column;
+  background: var(--light-bg);
+}
+
+main{                          /* single flex child that grows       */
+  flex:1 0 auto;
+  display:block;              /* default, just being explicit       */
+}
