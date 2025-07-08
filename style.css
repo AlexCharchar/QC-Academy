@@ -139,12 +139,10 @@ ul.nav-menu,
 
   /* Background: logo first, color fallback second */
   background:
-    url("QC_Media_Formated_Academy/QCAcademy-logo-white-no_writing_black_backround.jpg") center / cover no-repeat,
-    var(--main-color);
-  color: var(--light-text);
-
-  min-height: 320px;
-  max-height: 500px;
+    url("QC_Media_Formated_Academy/QCAcademy-logo-white_no_words.png") center / contain , black;
+    color: var(--light-text);
+    /* min-height: 320pxpx;
+    max-height: 500px; */
 }
 
 /* dark overlay to guarantee text readability */
@@ -153,7 +151,7 @@ ul.nav-menu,
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.3);
 }
 
 /* make hero content sit above overlay */
