@@ -144,6 +144,7 @@ ul.nav-menu,
   color: var(--light-text);
 
   min-height: 320px;
+  max-height: 500px;
 }
 
 /* dark overlay to guarantee text readability */
@@ -422,7 +423,7 @@ form select {
   .hero-content h2   { font-size: 1.5rem; }
 
   /* smaller site title */
-  #site-title        { font-size: 1.5rem; }
+  #site-title        { font-size: 1.3rem; }
 }
 
 
@@ -478,7 +479,7 @@ form select {
 
   /* Optional: shrink title on small screens */
   #site-title {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -762,7 +763,7 @@ main{                          /* single flex child that grows       */
   }
 
   #site-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   #hamburger {
