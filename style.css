@@ -139,7 +139,7 @@ ul.nav-menu,
 
   /* Background: logo first, color fallback second */
   background:
-    url("QC_Media_Formated_Academy/QC_Academy_simplified_logo.jpg") center / cover no-repeat,
+    url("QC_Media_Formated_Academy/QCAcademy-logo-white-no_writing_black_backround.jpg") center / cover no-repeat,
     var(--main-color);
   color: var(--light-text);
 
@@ -425,6 +425,69 @@ form select {
   #site-title        { font-size: 1.5rem; }
 }
 
+
+
+/* =======================================
+   Responsive Mobile Navigation (<= 975px)
+========================================= */
+@media (max-width: 975px) {
+  nav {
+    position: relative;
+  }
+
+  /* Show hamburger icon */
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    z-index: 10000;
+  }
+
+  /* Hide nav menu by default */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000; /* black background for visibility */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 9999;
+  }
+
+  /* Show nav menu when active */
+  .nav-menu.active {
+    display: flex;
+  }
+
+  /* Style each menu item */
+  .nav-menu li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .nav-menu li a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  /* Optional: shrink title on small screens */
+  #site-title {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+
 /* =========================================================
    4. Desktop enhancement (≥ 1200 px)
    ========================================================= */
@@ -573,4 +636,137 @@ body{
 main{                          /* single flex child that grows       */
   flex:1 0 auto;
   display:block;              /* default, just being explicit       */
+}
+
+/* =====================================================
+   HOME-PAGE ABOUT SUMMARY
+   ===================================================== */
+#home-about-summary{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 5%;
+}
+
+#home-about-summary.reverse{
+  flex-direction: row-reverse;   /* text left, image right (desktop) */
+}
+
+/* shared sizing + rounded corners */
+.home-about-image img{
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.home-about-text{
+  flex: 1 1 260px;
+  text-align: center;          /* ⬅︎ centres the heading + paragraph */
+}
+
+.home-about-text h2{
+  margin-bottom: 0.75rem;
+}
+
+/* ----------------------------------
+   Mobile tweak (same breakpoint you use)
+   ---------------------------------- */
+@media (max-width: 768px){
+  #home-about-summary, #home-about-summary.reverse{ flex-direction: column; text-align: center; }
+
+  /* ensure images centre on small screens */
+  .home-about-image img{ margin: 0 auto; }
+}
+
+
+/* =======================================================
+   Mobile override – centre the top “About” image ONLY
+   ======================================================= */
+@media (max-width: 768px){
+  #home-about-img-1{
+    width: auto;          /* stop stretching full-width      */
+    max-width: 350px;     /* keep your existing size cap     */
+    display: block;
+    margin: 0 auto;       /* true horizontal centring        */
+  }
+}
+
+
+/* ===============================
+   FOUNDER & EDUCATOR SECTION
+   – Responsive and balanced layout
+================================= */
+
+#founder-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.founder-image {
+  width: 100%;
+  max-width: 400px; /* Limit size on large screens */
+  margin-bottom: 40px;
+}
+
+.founder-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.founder-text {
+  width: 100%;
+  max-width: 800px;
+}
+
+.founder-text h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--dark-text);
+}
+
+.founder-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Force center alignment for the founder section layout */
+.founder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ensures true horizontal centering */
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* Fix overlap between site title and hamburger menu on mid-size screens */
+@media (max-width: 750px) and (min-width: 451px) {
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #site-title {
+    font-size: 1.5rem;
+  }
+
+  #hamburger {
+    margin-left: 16px; /* add spacing to push it right */
+    font-size: 2rem;
+  }
 }
