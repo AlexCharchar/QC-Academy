@@ -139,7 +139,7 @@ ul.nav-menu,
 
   /* Background: logo first, color fallback second */
   background:
-    url("QC_Media_Formated_Academy/QCAcademy-logo-white_no_words.png") center / contain , black;
+    url("QC_Media_Formated_Academy/QCAcademy-logo-white_no_words.png") center / contain no-repeat, black;
     color: var(--light-text);
     /* min-height: 320pxpx;
     max-height: 500px; */
