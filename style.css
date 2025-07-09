@@ -772,6 +772,8 @@ main{                          /* single flex child that grows       */
   }
 }
 
+
+
 #video-section {
   padding: 40px 20px;
   background-color: #f9f9f9; /* optional */
@@ -785,5 +787,5 @@ main{                          /* single flex child that grows       */
 
 #video-section h2 {
   margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
