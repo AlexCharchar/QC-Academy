@@ -771,3 +771,19 @@ main{                          /* single flex child that grows       */
     font-size: 2rem;
   }
 }
+
+#video-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* optional */
+  text-align: center;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#video-section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
